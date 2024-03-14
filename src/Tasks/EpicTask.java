@@ -1,9 +1,9 @@
-package Tasks;
-import TaskManagement.TaskStatus;
+package tasks;
+
 import java.util.ArrayList;
 
 public class EpicTask extends Task {
-    private ArrayList<Integer> subtasks;
+    private ArrayList<Integer> subtasks = new ArrayList<>();
 
     public EpicTask(String title, String description) {
         super(title, description);
@@ -11,10 +11,6 @@ public class EpicTask extends Task {
 
     public void addSubtask(Integer id) {
         subtasks.add(id);
-    }
-
-    public void setStatus(TaskStatus newStatus) {
-        this.status = newStatus;
     }
 
     public ArrayList<Integer> getSubtasks() {
@@ -29,4 +25,13 @@ public class EpicTask extends Task {
         subtasks.clear();
     }
 
+    @Override
+    public String toString() {
+        return "EpicTask{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", status=" + status +
+                '}';
+    }
 }

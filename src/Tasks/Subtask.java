@@ -1,5 +1,4 @@
-package Tasks;
-import TaskManagement.TaskStatus;
+package tasks;
 
 public class Subtask extends Task {
     private Integer epicId;
@@ -12,4 +11,14 @@ public class Subtask extends Task {
         return epicId;
     }
 
+    @Override
+    public String toString() {
+        return "Subtask{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", epicId=" + epicId +
+                ", status=" + status +
+                '}';
+    }
 }

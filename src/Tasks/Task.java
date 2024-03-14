@@ -1,5 +1,4 @@
-package Tasks;
-import TaskManagement.TaskStatus;
+package tasks;
 
 import java.util.Objects;
 
@@ -18,6 +17,14 @@ public class Task {
     public void setId(Integer id) {
         this.id = id;
     }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
     public Integer getId() {
         return id;
     }
@@ -34,6 +41,10 @@ public class Task {
         return status;
     }
 
+    public void setStatus(TaskStatus newStatus) {
+        this.status = newStatus;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -47,9 +58,15 @@ public class Task {
     public int hashCode() {
         return Objects.hash(id, title, description, status);
     }
-}
 
-/*
-У класса задач должны должны быть переопределены методы equals() и hashCode(),
-которые выдают равенство задач с одинаковыми айди
- */
+    @Override
+    public String toString() {
+        return "Task{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", status=" + status +
+                '}';
+    }
+
+}
